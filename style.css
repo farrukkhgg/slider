@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: cadetblue;
+}
+
+.slider {
+    width: 90%;
+    height: 90%;
+    position: relative;
+    background: lightgray;
+}
+
+.slider::before {
+    content: '<';
+    position: absolute;
+    font-size: 30px;
+    font-weight: 900;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+.slider::after {
+    content: '>';
+    position: absolute;
+    font-size: 30px;
+    font-weight: 900;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+}
+
+.slider-before {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    background-image: url('https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMH1spMBvMZq6G5OtgSv31nBJaA4qh4NSEGkaW%25cz91wxuzbUUdMGLqk0DLfF%25vUqbxAuWXsOaUJeV6iTrd2zhRc2cUWqA7fQhdiOJUPYyMN9nReCkxo4y7zInhF%25vUqYHPuWXsO5XJeV6iTJ83zhp4NdTxf4KxJhvaBH6mOcuLAlWRDdV2Dd');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.slider-after {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMH1spMBvMZq6G5OtgSv31nBJaA4qh4NSEGkaW%25cz91wxuzbUUdMGLqk0D3WF%25vUqbxAuWXsOaUJeV6iTrd2zhRc2cUWqA7fQhdiOJUPYyMN9nReCkxo4y7zInhF%25vUqYHPuWXsO5XJeV6iTJ83zhp4NdTxf4KxJhvaBH6mOcuLAlWRDdV2Dd');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.slider-resize {
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    cursor: e-resize;
+}
+
+
+@media (max-width: 768px) {
+    .slider {
+        width: 90%;
+        height: 50vh;
+    }
+
+    .slider::before,
+    .slider::after {
+        font-size: 20px;
+    }
+
+    .slider-resize {
+        width: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        width: 95%;
+        height: 40vh;
+    }
+
+    .slider::before,
+    .slider::after {
+        font-size: 18px;
+    }
+
+    .slider-resize {
+        width: 2px;
+    }
+}
